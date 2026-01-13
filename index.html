@@ -370,7 +370,7 @@
                         <div class="overlay">Caminhão HR Baú</div>
                     </li>
                     <li class="carousel-slide">
-                        <img src="imagens/espaco-interno.jpg" alt="Espaço Interno" loading="lazy">
+                        <img src="imagens/espaço-interno.jpg" alt="Espaço Interno" loading="lazy">
                         <div class="overlay">Amplo Espaço Interno</div>
                     </li>
                     <li class="carousel-slide">
@@ -378,12 +378,11 @@
                         <div class="overlay">Agilidade no Trânsito</div>
                     </li>
                     <li class="carousel-slide">
-                        <img src="imagens/equuipe.jpg" alt="Equipe de Mudança" loading="lazy">
+                        <img src="imagens/equipe.jpg" alt="Equipe de Mudança" loading="lazy">
                         <div class="overlay">Equipe Especializada</div>
                     </li>
                     <li class="carousel-slide">
-                        <img src="imagens/embalaçens.webp" alt="Embalagens" loading="lazy">
-                        <div class="overlay">Material de Proteção</div>
+                        <img src="imagens/embalaerial de Proteção</div>
                     </li>
                 </ul>
             </div>
@@ -1242,93 +1241,20 @@
                 }
             });
         }
-    </script>
-</body>
-</html>         if (event.target == termsModal) {
-                    termsModal.style.display = "none";
+
+        // --- Correção Automática de Imagens ---
+        // Verifica se as imagens carregaram. Se não, tenta buscar na pasta raiz.
+        window.addEventListener('load', function() {
+            document.querySelectorAll('.carousel-slide img').forEach(function(img) {
+                if (img.naturalWidth === 0) {
+                    // Se a imagem falhou, tenta remover 'imagens/' do caminho para ver se está na raiz
+                    var src = img.getAttribute('src');
+                    if (src.includes('imagens/')) {
+                        img.src = src.replace('imagens/', '');
+                    }
                 }
             });
-        }
-    </script>
-</body>
-</html>             div.classList.add('selected');
-                    selectedDate = new Date(year, month, i);
-                    showTimeSlots();
-                });
-
-                calendarDays.appendChild(div);
-            }
-        }
-
-        function showTimeSlots() {
-            timeSlotsContainer.style.display = 'block';
-            selectedDateDisplay.innerText = selectedDate.toLocaleDateString('pt-BR');
-            
-            // Horários simulados
-            const times = ["08:00", "10:00", "13:00", "15:00", "17:00"];
-            slotsGrid.innerHTML = "";
-            confirmScheduleBtn.style.display = 'none';
-
-            times.forEach(time => {
-                const btn = document.createElement('button');
-                btn.classList.add('time-slot');
-                btn.innerText = time;
-                btn.addEventListener('click', () => {
-                    document.querySelectorAll('.time-slot').forEach(t => t.classList.remove('selected'));
-                    btn.classList.add('selected');
-                    confirmScheduleBtn.style.display = 'block';
-                });
-                slotsGrid.appendChild(btn);
-            });
-        }
-
-        if (prevMonthBtn && nextMonthBtn) {
-            prevMonthBtn.addEventListener('click', () => {
-                currentDate.setMonth(currentDate.getMonth() - 1);
-                renderCalendar();
-            });
-
-            nextMonthBtn.addEventListener('click', () => {
-                currentDate.setMonth(currentDate.getMonth() + 1);
-                renderCalendar();
-            });
-
-            confirmScheduleBtn.addEventListener('click', () => {
-                const time = document.querySelector('.time-slot.selected').innerText;
-                const dateStr = selectedDate.toLocaleDateString('pt-BR');
-                const msg = `Olá, gostaria de agendar uma mudança para o dia ${dateStr} às ${time}.`;
-                
-                // Preenche o formulário de contato e rola até ele
-                const msgInput = document.getElementById('mensagem');
-                if(msgInput) {
-                    msgInput.value = msg;
-                    document.getElementById('orcamento').scrollIntoView({behavior: 'smooth'});
-                }
-            });
-
-            renderCalendar();
-        }
-
-        // --- Modal Termos de Serviço ---
-        const termsModal = document.getElementById("termsModal");
-        const openTermsBtn = document.getElementById("openTermsModal");
-        const closeTermsBtn = document.querySelector(".close-modal-btn");
-
-        if (openTermsBtn && termsModal && closeTermsBtn) {
-            openTermsBtn.addEventListener('click', () => {
-                termsModal.style.display = "block";
-            });
-
-            closeTermsBtn.addEventListener('click', () => {
-                termsModal.style.display = "none";
-            });
-
-            window.addEventListener('click', (event) => {
-                if (event.target == termsModal) {
-                    termsModal.style.display = "none";
-                }
-            });
-        }
+        });
     </script>
 </body>
 </html>
