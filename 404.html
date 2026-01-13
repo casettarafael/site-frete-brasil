@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página não encontrada | Frete Brasil 011</title>
+    <meta name="robots" content="noindex"> <!-- Evita indexação desta página de erro -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Bar de Aviso -->
+    <div id="top-bar" class="top-bar">
+        <p>📢 <strong>Promoção:</strong> 5% de desconto para pagamentos via PIX! <a href="index.html#orcamento">Aproveite agora</a></p>
+        <button id="close-top-bar" class="close-top-bar" aria-label="Fechar aviso">&times;</button>
+    </div>
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo" style="text-decoration: none; display: flex; align-items: center;">
+                <span style="color: white;">FRETE BRASIL 011</span>
+            </a>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-icon" aria-label="Abrir menu de navegação"><i class="fas fa-bars"></i></label>
+            <ul class="nav-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="quem-somos.html">Quem Somos</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="index.html#servicos">Serviços</a></li>
+                <li><a href="index.html#frota">Frota</a></li>
+                <li><a href="index.html#depoimentos">Depoimentos</a></li>
+                <li class="mobile-only"><a href="index.html#orcamento" class="btn-contato-mobile">Pedir Orçamento</a></li>
+            </ul>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Alternar Tema Escuro"><i class="fas fa-moon"></i></button>
+            <a href="index.html#orcamento" class="btn-contato">Pedir Orçamento</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="breadcrumbs-container">
+            <div class="breadcrumbs">
+                <a href="index.html">Início</a> <span class="separator">/</span> <span class="current">Erro 404</span>
+            </div>
+        </div>
+        <section class="error-container">
+            <i class="fas fa-exclamation-triangle"></i>
+            <h1>Ops! Página não encontrada</h1>
+            <p>Parece que o link que você acessou não existe, foi movido ou está temporariamente indisponível.</p>
+            <a href="index.html" class="btn-back"><i class="fas fa-home"></i> Voltar ao Início</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-contact-cta">
+            <h3>Dúvidas? Fale Conosco</h3>
+            <p>Nossa equipe está pronta para te atender agora mesmo.</p>
+            <a href="https://wa.me/5511939353246" class="btn-pulse" target="_blank"><i class="fab fa-whatsapp"></i> Chamar no WhatsApp</a>
+        </div>
+
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Frete Brasil 011</h3>
+                <p>Soluções completas em mudanças e transportes para o ABC e Grande São Paulo.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="quem-somos.html">Quem Somos</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="index.html#servicos">Serviços</a></li>
+                    <li><a href="index.html#orcamento">Pedir Orçamento</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Siga-nos</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/5511939353246" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Frete Brasil 011 - Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5511939353246" class="whatsapp-float" target="_blank" aria-label="Fale conosco no WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // --- Top Bar (Barra de Aviso) ---
+        const topBar = document.getElementById('top-bar');
+        const closeTopBar = document.getElementById('close-top-bar');
+        const isTopBarClosed = localStorage.getItem('topBarClosed') === 'true';
+
+        if (!isTopBarClosed && topBar) {
+            topBar.style.display = 'flex';
+            document.body.classList.add('has-topbar');
+        }
+
+        if (closeTopBar) {
+            closeTopBar.addEventListener('click', () => {
+                topBar.style.display = 'none';
+                document.body.classList.remove('has-topbar');
+                localStorage.setItem('topBarClosed', 'true');
+            });
+        }
+
+        // --- Dark Mode Toggle ---
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        const icon = themeToggle.querySelector('i');
+
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+            icon.classList.replace('fa-moon', 'fa-sun');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            const isDark = body.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
+            icon.classList.replace(isDark ? 'fa-moon' : 'fa-sun', isDark ? 'fa-sun' : 'fa-moon');
+        });
+    </script>
+</body>
+</html>

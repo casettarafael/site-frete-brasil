@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obrigado | Frete Brasil 011</title>
+    <meta name="robots" content="noindex"> <!-- Evita indexação desta página no Google -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Canvas para Confetes -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- Top Bar de Aviso -->
+    <div id="top-bar" class="top-bar">
+        <p>📢 <strong>Promoção:</strong> 5% de desconto para pagamentos via PIX! <a href="index.html#orcamento">Aproveite agora</a></p>
+        <button id="close-top-bar" class="close-top-bar" aria-label="Fechar aviso">&times;</button>
+    </div>
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo" style="text-decoration: none; display: flex; align-items: center;">
+                <span style="color: white;">FRETE BRASIL 011</span>
+            </a>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-icon" aria-label="Abrir menu de navegação"><i class="fas fa-bars"></i></label>
+            <ul class="nav-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="quem-somos.html">Quem Somos</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="index.html#servicos">Serviços</a></li>
+                <li><a href="index.html#frota">Frota</a></li>
+                <li><a href="index.html#depoimentos">Depoimentos</a></li>
+                <li class="mobile-only"><a href="index.html#orcamento" class="btn-contato-mobile">Pedir Orçamento</a></li>
+            </ul>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Alternar Tema Escuro"><i class="fas fa-moon"></i></button>
+            <a href="index.html#orcamento" class="btn-contato">Pedir Orçamento</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="breadcrumbs-container">
+            <div class="breadcrumbs">
+                <a href="index.html">Início</a> <span class="separator">/</span> <span class="current">Obrigado</span>
+            </div>
+        </div>
+        <section class="thank-you-container">
+            <i class="fas fa-check-circle"></i>
+            <h1>Obrigado!</h1>
+            <p>Sua solicitação de orçamento foi enviada com sucesso.</p>
+            <p>Nossa equipe analisará seu pedido e entrará em contato pelo WhatsApp ou telefone o mais breve possível.</p>
+            <a href="index.html" class="btn-back">Voltar ao Início</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-contact-cta">
+            <h3>Dúvidas? Fale Conosco</h3>
+            <p>Nossa equipe está pronta para te atender agora mesmo.</p>
+            <a href="https://wa.me/5511939353246" class="btn-pulse" target="_blank"><i class="fab fa-whatsapp"></i> Chamar no WhatsApp</a>
+        </div>
+
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Frete Brasil 011</h3>
+                <p>Soluções completas em mudanças e transportes para o ABC e Grande São Paulo.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="quem-somos.html">Quem Somos</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="index.html#servicos">Serviços</a></li>
+                    <li><a href="index.html#orcamento">Pedir Orçamento</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Siga-nos</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/5511939353246" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Frete Brasil 011 - Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5511939353246" class="whatsapp-float" target="_blank" aria-label="Fale conosco no WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <a href="https://api.whatsapp.com/send?text=Ol%C3%A1!%20Acabei%20de%20solicitar%20um%20or%C3%A7amento%20com%20a%20Frete%20Brasil%20011%20e%20o%20atendimento%20foi%20%C3%B3timo.%20Se%20precisar%20de%20mudan%C3%A7a%20ou%20transporte%2C%20recomendo!%20%F0%9F%9A%9A%20https%3A%2F%2Fwa.me%2F5511939353246" class="whatsapp-share-float" target="_blank" aria-label="Indicar para um amigo no WhatsApp">
+        <i class="fab fa-whatsapp"></i> <span>Indicar para Amigo</span>
+    </a>
+
+    <script>
+        // --- Top Bar (Barra de Aviso) ---
+        const topBar = document.getElementById('top-bar');
+        const closeTopBar = document.getElementById('close-top-bar');
+        const isTopBarClosed = localStorage.getItem('topBarClosed') === 'true';
+
+        if (!isTopBarClosed && topBar) {
+            topBar.style.display = 'flex';
+            document.body.classList.add('has-topbar');
+        }
+
+        if (closeTopBar) {
+            closeTopBar.addEventListener('click', () => {
+                topBar.style.display = 'none';
+                document.body.classList.remove('has-topbar');
+                localStorage.setItem('topBarClosed', 'true');
+            });
+        }
+
+        // --- Efeito de Confete ---
+        const canvas = document.getElementById('confetti-canvas');
+        const ctx = canvas.getContext('2d');
+        
+        let width = window.innerWidth;
+        let height = window.innerHeight;
+        canvas.width = width;
+        canvas.height = height;
+
+        const particles = [];
+        // Cores da marca + cores festivas
+        const colors = ['#ff6600', '#003366', '#25d366', '#f4d03f', '#e74c3c']; 
+
+        function Particle() {
+            this.x = Math.random() * width;
+            this.y = Math.random() * height - height; // Começa acima da tela
+            this.vx = Math.random() * 4 - 2;
+            this.vy = Math.random() * 5 + 2;
+            this.color = colors[Math.floor(Math.random() * colors.length)];
+            this.size = Math.random() * 10 + 5;
+            this.rotation = Math.random() * 360;
+            this.rotationSpeed = Math.random() * 10 - 5;
+        }
+
+        Particle.prototype.update = function() {
+            this.y += this.vy;
+            this.x += this.vx;
+            this.rotation += this.rotationSpeed;
+
+            // Reinicia a partícula se sair da tela
+            if (this.y > height) {
+                this.y = -20;
+                this.x = Math.random() * width;
+            }
+        };
+
+        Particle.prototype.draw = function() {
+            ctx.save();
+            ctx.translate(this.x, this.y);
+            ctx.rotate(this.rotation * Math.PI / 180);
+            ctx.fillStyle = this.color;
+            ctx.fillRect(-this.size / 2, -this.size / 2, this.size, this.size);
+            ctx.restore();
+        };
+
+        // Cria 150 partículas
+        for (let i = 0; i < 150; i++) {
+            particles.push(new Particle());
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', () => {
+            width = window.innerWidth;
+            height = window.innerHeight;
+            canvas.width = width;
+            canvas.height = height;
+        });
+
+        // Inicia a animação
+        animate();
+
+        // --- Dark Mode Toggle ---
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        const icon = themeToggle.querySelector('i');
+
+        // Verifica preferência salva
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+            icon.classList.replace('fa-moon', 'fa-sun');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            const isDark = body.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
+            icon.classList.replace(isDark ? 'fa-moon' : 'fa-sun', isDark ? 'fa-sun' : 'fa-moon');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dicas de Mudança | Blog Frete Brasil 011</title>
+    <meta name="description" content="Confira dicas essenciais para sua mudança, organização e transporte. O Blog da Frete Brasil 011 ajuda você a planejar tudo com tranquilidade.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Top Bar de Aviso -->
+    <div id="top-bar" class="top-bar">
+        <p>📢 <strong>Promoção:</strong> 5% de desconto para pagamentos via PIX! <a href="index.html#orcamento">Aproveite agora</a></p>
+        <button id="close-top-bar" class="close-top-bar" aria-label="Fechar aviso">&times;</button>
+    </div>
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo" style="text-decoration: none; display: flex; align-items: center;">
+                <span style="color: white;">FRETE BRASIL 011</span>
+            </a>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-icon" aria-label="Abrir menu de navegação"><i class="fas fa-bars"></i></label>
+            <ul class="nav-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="quem-somos.html">Quem Somos</a></li>
+                <li><a href="blog.html" style="color: var(--accent-color);">Blog</a></li>
+                <li><a href="index.html#servicos">Serviços</a></li>
+                <li><a href="index.html#frota">Frota</a></li>
+                <li><a href="index.html#depoimentos">Depoimentos</a></li>
+                <li class="mobile-only"><a href="index.html#orcamento" class="btn-contato-mobile">Pedir Orçamento</a></li>
+            </ul>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Alternar Tema Escuro"><i class="fas fa-moon"></i></button>
+            <a href="index.html#orcamento" class="btn-contato">Pedir Orçamento</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="header-content fade-on-scroll">
+                <div class="breadcrumbs">
+                    <a href="index.html">Início</a> <span class="separator">/</span> <span class="current">Blog</span>
+                </div>
+                <h1>Blog & Dicas</h1>
+                <p>Informações úteis para planejar sua mudança com tranquilidade</p>
+            </div>
+        </section>
+
+        <section class="blog-section">
+            <div class="category-filter fade-on-scroll">
+                <button class="category-btn active" data-category="all">Todos</button>
+                <button class="category-btn" data-category="dicas">Dicas</button>
+                <button class="category-btn" data-category="organizacao">Organização</button>
+                <button class="category-btn" data-category="transporte">Transporte</button>
+            </div>
+
+            <div class="blog-search-container fade-on-scroll">
+                <i class="fas fa-search search-icon-blog"></i>
+                <input type="text" id="blog-search" class="blog-search-input" placeholder="Buscar dicas, tutoriais...">
+            </div>
+
+            <div class="blog-grid" id="blog-grid">
+                <!-- Post 1 -->
+                <article class="blog-card fade-on-scroll" data-category="dicas">
+                    <div class="blog-image">
+                        <img src="https://via.placeholder.com/400x250?text=Embalagem+Segura" alt="Dicas de Embalagem">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-tags"><span class="blog-tag">Dicas</span></div>
+                        <span class="blog-date"><i class="far fa-calendar-alt"></i> 15 de Outubro, 2023</span>
+                        <h3>Como embalar taças e cristais com segurança</h3>
+                        <p>Aprenda o passo a passo para proteger seus itens frágeis e evitar quebras durante o transporte.</p>
+                        <a href="post-exemplo.html" class="read-more-btn">Ler Mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Post 2 -->
+                <article class="blog-card fade-on-scroll" data-category="organizacao">
+                    <div class="blog-image">
+                        <img src="https://via.placeholder.com/400x250?text=Checklist+Mudanca" alt="Checklist de Mudança">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-tags"><span class="blog-tag">Organização</span></div>
+                        <span class="blog-date"><i class="far fa-calendar-alt"></i> 22 de Setembro, 2023</span>
+                        <h3>Checklist completo para sua mudança residencial</h3>
+                        <p>Não esqueça de nada! Preparamos uma lista completa do que fazer 30 dias antes de mudar.</p>
+                        <a href="#" class="read-more-btn">Ler Mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Post 3 -->
+                <article class="blog-card fade-on-scroll" data-category="organizacao">
+                    <div class="blog-image">
+                        <img src="https://via.placeholder.com/400x250?text=Melhor+Dia" alt="Calendário">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-tags"><span class="blog-tag">Organização</span></div>
+                        <span class="blog-date"><i class="far fa-calendar-alt"></i> 05 de Setembro, 2023</span>
+                        <h3>Qual o melhor dia para realizar sua mudança?</h3>
+                        <p>Descubra as vantagens e desvantagens de mudar durante a semana ou aos finais de semana.</p>
+                        <a href="#" class="read-more-btn">Ler Mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Post 4 -->
+                <article class="blog-card fade-on-scroll" data-category="transporte">
+                    <div class="blog-image">
+                        <img src="https://via.placeholder.com/400x250?text=Transporte+de+Plantas" alt="Plantas">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-tags"><span class="blog-tag">Transporte</span></div>
+                        <span class="blog-date"><i class="far fa-calendar-alt"></i> 20 de Agosto, 2023</span>
+                        <h3>Dicas para transportar suas plantas</h3>
+                        <p>Saiba como preparar seus vasos e plantas para que cheguem saudáveis ao novo lar.</p>
+                        <a href="#" class="read-more-btn">Ler Mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Post 5 -->
+                <article class="blog-card fade-on-scroll" data-category="dicas">
+                    <div class="blog-image">
+                        <img src="https://via.placeholder.com/400x250?text=Geladeira+e+Freezer" alt="Eletrodomésticos">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-tags"><span class="blog-tag">Dicas</span></div>
+                        <span class="blog-date"><i class="far fa-calendar-alt"></i> 10 de Agosto, 2023</span>
+                        <h3>Como preparar a geladeira para a mudança</h3>
+                        <p>Descongelamento, limpeza e transporte seguro dos seus eletrodomésticos.</p>
+                        <a href="#" class="read-more-btn">Ler Mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Post 6 -->
+                <article class="blog-card fade-on-scroll" data-category="transporte">
+                    <div class="blog-image">
+                        <img src="https://via.placeholder.com/400x250?text=Mudanca+com+Pets" alt="Pets">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-tags"><span class="blog-tag">Transporte</span></div>
+                        <span class="blog-date"><i class="far fa-calendar-alt"></i> 01 de Agosto, 2023</span>
+                        <h3>Mudança com animais de estimação</h3>
+                        <p>Reduza o estresse do seu pet durante o processo de mudança com essas dicas simples.</p>
+                        <a href="#" class="read-more-btn">Ler Mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <div class="no-results" id="no-results">
+                    <p>Nenhum artigo encontrado para sua busca.</p>
+                </div>
+            </div>
+
+            <!-- Paginação -->
+            <div class="pagination" id="pagination"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-contact-cta">
+            <h3>Dúvidas? Fale Conosco</h3>
+            <p>Nossa equipe está pronta para te atender agora mesmo.</p>
+            <a href="https://wa.me/5511939353246" class="btn-pulse" target="_blank"><i class="fab fa-whatsapp"></i> Chamar no WhatsApp</a>
+        </div>
+
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Frete Brasil 011</h3>
+                <p>Soluções completas em mudanças e transportes para o ABC e Grande São Paulo.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Links Rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="quem-somos.html">Quem Somos</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="index.html#servicos">Serviços</a></li>
+                    <li><a href="index.html#orcamento">Pedir Orçamento</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Siga-nos</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/5511939353246" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Frete Brasil 011 - Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5511939353246" class="whatsapp-float" target="_blank" aria-label="Fale conosco no WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <button id="backToTop" class="back-to-top" aria-label="Voltar ao topo">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Lightbox para Zoom de Imagens -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Imagem Ampliada">
+    </div>
+
+    <script>
+        // Animação simples ao rolar
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        });
+        document.querySelectorAll('.fade-on-scroll').forEach(el => observer.observe(el));
+
+        // Botão Voltar ao Topo
+        const backToTopBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) backToTopBtn.classList.add('show');
+            else backToTopBtn.classList.remove('show');
+        });
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // --- Dark Mode Toggle ---
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        const icon = themeToggle.querySelector('i');
+
+        // Verifica preferência salva
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+            icon.classList.replace('fa-moon', 'fa-sun');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            const isDark = body.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
+            icon.classList.replace(isDark ? 'fa-moon' : 'fa-sun', isDark ? 'fa-sun' : 'fa-moon');
+        });
+
+        // --- Blog Pagination, Search & Categories ---
+        const searchInput = document.getElementById('blog-search');
+        const blogCards = Array.from(document.querySelectorAll('.blog-card')); // Converte NodeList para Array
+        const noResults = document.getElementById('no-results');
+        const paginationContainer = document.getElementById('pagination');
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        
+        const itemsPerPage = 3;
+        let currentPage = 1;
+        let currentCategory = 'all';
+        let currentSearch = '';
+
+        function getFilteredPosts() {
+            return blogCards.filter(card => {
+                const category = card.getAttribute('data-category');
+                const title = card.querySelector('h3').innerText.toLowerCase();
+                const content = card.querySelector('p').innerText.toLowerCase();
+                
+                const matchesCategory = currentCategory === 'all' || category === currentCategory;
+                const matchesSearch = title.includes(currentSearch) || content.includes(currentSearch);
+                
+                return matchesCategory && matchesSearch;
+            });
+        }
+
+        function displayPosts(page, posts) {
+            // Esconde todos primeiro
+            posts.forEach(card => card.style.display = 'none');
+            
+            // Se não houver posts filtrados, mostra mensagem
+            if (posts.length === 0) {
+                noResults.style.display = 'block';
+                paginationContainer.style.display = 'none';
+                return;
+            } else {
+                noResults.style.display = 'none';
+                paginationContainer.style.display = 'flex';
+            }
+
+            // Calcula o slice (fatia) de posts para a página atual
+            const start = (page - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+            const paginatedPosts = posts.slice(start, end);
+
+            // Mostra apenas os posts da página
+            paginatedPosts.forEach(card => card.style.display = 'flex');
+        }
+
+        function setupPagination(posts) {
+            paginationContainer.innerHTML = '';
+            const pageCount = Math.ceil(posts.length / itemsPerPage);
+
+            if (pageCount <= 1) {
+                paginationContainer.style.display = 'none';
+                return;
+            }
+
+            for (let i = 1; i <= pageCount; i++) {
+                const btn = document.createElement('button');
+                btn.innerText = i;
+                btn.classList.add('page-btn');
+                if (i === currentPage) btn.classList.add('active');
+                
+                btn.addEventListener('click', () => {
+                    currentPage = i;
+                    displayPosts(currentPage, posts);
+                    
+                    // Atualiza classe ativa
+                    document.querySelectorAll('.page-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    
+                    // Rola suavemente para o topo da lista
+                    document.querySelector('.blog-section').scrollIntoView({ behavior: 'smooth' });
+                });
+                
+                paginationContainer.appendChild(btn);
+            }
+        }
+
+        function updateState() {
+            const filtered = getFilteredPosts();
+            
+            // Reseta para página 1 se a página atual for maior que o total de páginas
+            const pageCount = Math.ceil(filtered.length / itemsPerPage);
+            if (currentPage > pageCount) currentPage = 1;
+            if (currentPage < 1) currentPage = 1;
+
+            displayPosts(currentPage, filtered);
+            setupPagination(filtered);
+        }
+
+        // Event Listeners
+        if (searchInput) {
+            searchInput.addEventListener('input', (e) => {
+                currentSearch = e.target.value.toLowerCase();
+                currentPage = 1; // Reseta página ao buscar
+                updateState();
+            });
+        }
+
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Atualização visual
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Atualização lógica
+                currentCategory = btn.getAttribute('data-category');
+                currentPage = 1; // Reseta página ao mudar categoria
+                updateState();
+            });
+        });
+
+        // Inicialização
+        updateState();
+
+        // --- Lightbox (Zoom de Imagem) ---
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxClose = document.querySelector('.lightbox-close');
+        const blogImages = document.querySelectorAll('.blog-image img');
+
+        blogImages.forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightbox.classList.add('active');
+            });
+        });
+
+        if (lightboxClose) {
+            lightboxClose.addEventListener('click', () => {
+                lightbox.classList.remove('active');
+            });
+        }
+
+        if (lightbox) {
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    lightbox.classList.remove('active');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
