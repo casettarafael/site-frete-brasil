@@ -140,6 +140,7 @@
         </div>
         <div class="footer-bottom">
             <p>&copy; 2024 Frete Brasil 011 - Todos os direitos reservados.</p>
+            <a id="openTermsModal" class="footer-legal-link">Termos de Serviço e Política de Privacidade</a>
         </div>
     </footer>
 
@@ -150,6 +151,29 @@
     <button id="backToTop" class="back-to-top" aria-label="Voltar ao topo">
         <i class="fas fa-arrow-up"></i>
     </button>
+
+    <!-- Modal Termos de Serviço -->
+    <div id="termsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal-btn">&times;</span>
+            <div class="modal-body">
+                <h2>Termos de Serviço</h2>
+                <p>Bem-vindo à Frete Brasil 011. Ao utilizar nossos serviços, você concorda com os seguintes termos:</p>
+                
+                <h3>1. Serviços Oferecidos</h3>
+                <p>Realizamos serviços de transporte, fretes e mudanças utilizando caminhões modelo Hyundai HR Baú. O serviço inclui motorista e veículo. Ajudantes são opcionais e devem ser contratados à parte ou especificados no orçamento.</p>
+
+                <h3>2. Agendamento e Cancelamento</h3>
+                <p>O agendamento é confirmado mediante disponibilidade. Cancelamentos devem ser feitos com pelo menos 24 horas de antecedência. O não comparecimento ou cancelamento em cima da hora pode estar sujeito a taxas.</p>
+
+                <h3>3. Responsabilidades</h3>
+                <p>Nos comprometemos a transportar seus bens com segurança e zelo. Recomendamos que itens de alto valor (joias, dinheiro, documentos) sejam transportados pessoalmente pelo cliente. Não nos responsabilizamos por itens embalados incorretamente pelo cliente.</p>
+
+                <h3>4. Pagamento</h3>
+                <p>O pagamento deve ser realizado conforme combinado no orçamento (PIX, dinheiro ou cartão), geralmente no ato da entrega ou carregamento.</p>
+            </div>
+        </div>
+    </div>
 
     <script>
         // Animação simples ao rolar
@@ -249,6 +273,27 @@
             localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
             icon.classList.replace(isDark ? 'fa-moon' : 'fa-sun', isDark ? 'fa-sun' : 'fa-moon');
         });
+
+        // --- Modal Termos de Serviço ---
+        const termsModal = document.getElementById("termsModal");
+        const openTermsBtn = document.getElementById("openTermsModal");
+        const closeTermsBtn = document.querySelector(".close-modal-btn");
+
+        if (openTermsBtn && termsModal && closeTermsBtn) {
+            openTermsBtn.addEventListener('click', () => {
+                termsModal.style.display = "block";
+            });
+
+            closeTermsBtn.addEventListener('click', () => {
+                termsModal.style.display = "none";
+            });
+
+            window.addEventListener('click', (event) => {
+                if (event.target == termsModal) {
+                    termsModal.style.display = "none";
+                }
+            });
+        }
     </script>
 </body>
 </html>

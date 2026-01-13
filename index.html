@@ -366,23 +366,23 @@
             <div class="carousel-track-container">
                 <ul class="carousel-track">
                     <li class="carousel-slide">
-                        <img src="https://via.placeholder.com/400x300?text=Caminhao+HR+Bau" alt="Caminhão HR Baú" loading="lazy">
+                        <img src="hr.jpg" alt="Caminhão HR Baú" loading="lazy">
                         <div class="overlay">Caminhão HR Baú</div>
                     </li>
                     <li class="carousel-slide">
-                        <img src="https://via.placeholder.com/400x300?text=Espaco+Interno" alt="Espaço Interno" loading="lazy">
+                        <img src="espaço-interno.jpg" alt="Espaço Interno" loading="lazy">
                         <div class="overlay">Amplo Espaço Interno</div>
                     </li>
                     <li class="carousel-slide">
-                        <img src="https://via.placeholder.com/400x300?text=HR+em+Servico" alt="HR em Serviço" loading="lazy">
+                        <img src="transito.jpg" alt="HR em Serviço" loading="lazy">
                         <div class="overlay">Agilidade no Trânsito</div>
                     </li>
                     <li class="carousel-slide">
-                        <img src="https://via.placeholder.com/400x300?text=Equipe+Especializada" alt="Equipe de Mudança" loading="lazy">
+                        <img src="equuipe.jpg" alt="Equipe de Mudança" loading="lazy">
                         <div class="overlay">Equipe Especializada</div>
                     </li>
                     <li class="carousel-slide">
-                        <img src="https://via.placeholder.com/400x300?text=Embalagens" alt="Embalagens" loading="lazy">
+                        <img src="embalaçens.webp" alt="Embalagens" loading="lazy">
                         <div class="overlay">Material de Proteção</div>
                     </li>
                 </ul>
@@ -549,6 +549,7 @@
         <div class="footer-bottom">
             <p>&copy; 2024 Frete Brasil 011 - Todos os direitos reservados.</p>
             <p>Atendendo: São Bernardo do Campo, Santo André, São Caetano do Sul, Diadema, Mauá e Grande SP.</p>
+            <a id="openTermsModal" class="footer-legal-link">Termos de Serviço e Política de Privacidade</a>
         </div>
     </footer>
 
@@ -572,6 +573,29 @@
             </div>
             <p>Garanta seu desconto agora mesmo pelo WhatsApp.</p>
             <a href="https://wa.me/5511939353246?text=Olá,%20vi%20o%20desconto%20de%205%25%20no%20site%20e%20gostaria%20de%20um%20orçamento." class="btn-popup" target="_blank">Quero meu Desconto</a>
+        </div>
+    </div>
+
+    <!-- Modal Termos de Serviço -->
+    <div id="termsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal-btn">&times;</span>
+            <div class="modal-body">
+                <h2>Termos de Serviço</h2>
+                <p>Bem-vindo à Frete Brasil 011. Ao utilizar nossos serviços, você concorda com os seguintes termos:</p>
+                
+                <h3>1. Serviços Oferecidos</h3>
+                <p>Realizamos serviços de transporte, fretes e mudanças utilizando caminhões modelo Hyundai HR Baú. O serviço inclui motorista e veículo. Ajudantes são opcionais e devem ser contratados à parte ou especificados no orçamento.</p>
+
+                <h3>2. Agendamento e Cancelamento</h3>
+                <p>O agendamento é confirmado mediante disponibilidade. Cancelamentos devem ser feitos com pelo menos 24 horas de antecedência. O não comparecimento ou cancelamento em cima da hora pode estar sujeito a taxas.</p>
+
+                <h3>3. Responsabilidades</h3>
+                <p>Nos comprometemos a transportar seus bens com segurança e zelo. Recomendamos que itens de alto valor (joias, dinheiro, documentos) sejam transportados pessoalmente pelo cliente. Não nos responsabilizamos por itens embalados incorretamente pelo cliente.</p>
+
+                <h3>4. Pagamento</h3>
+                <p>O pagamento deve ser realizado conforme combinado no orçamento (PIX, dinheiro ou cartão), geralmente no ato da entrega ou carregamento.</p>
+            </div>
         </div>
     </div>
 
@@ -745,6 +769,9 @@
         const prevButton = document.querySelector('.prev-btn');
         const dotsNav = document.querySelector('.carousel-nav');
 
+        // Limpa indicadores existentes para evitar duplicação
+        dotsNav.innerHTML = '';
+
         // Cria os indicadores (bolinhas)
         slides.forEach((_, index) => {
             const dot = document.createElement('button');
@@ -754,7 +781,10 @@
             dotsNav.appendChild(dot);
             
             dot.addEventListener('click', () => {
+                // Para o autoplay ao interagir
+                stopAutoPlay();
                 moveToSlide(index);
+                startAutoPlay();
             });
         });
 
@@ -762,6 +792,7 @@
         let currentIndex = 0;
 
         const updateSlidePosition = () => {
+            if (slides.length === 0) return;
             const slideWidth = slides[0].getBoundingClientRect().width;
             track.style.transform = 'translateX(-' + (slideWidth * currentIndex) + 'px)';
             
@@ -782,8 +813,17 @@
         };
 
         // Event Listeners dos Botões
-        nextButton.addEventListener('click', () => moveToSlide(currentIndex + 1));
-        prevButton.addEventListener('click', () => moveToSlide(currentIndex - 1));
+        nextButton.addEventListener('click', () => {
+            stopAutoPlay();
+            moveToSlide(currentIndex + 1);
+            startAutoPlay();
+        });
+        
+        prevButton.addEventListener('click', () => {
+            stopAutoPlay();
+            moveToSlide(currentIndex - 1);
+            startAutoPlay();
+        });
 
         // Recalcula posição ao redimensionar a tela
         window.addEventListener('resize', updateSlidePosition);
@@ -792,7 +832,10 @@
         let autoPlay = setInterval(() => moveToSlide(currentIndex + 1), 5000);
         
         const stopAutoPlay = () => clearInterval(autoPlay);
-        const startAutoPlay = () => autoPlay = setInterval(() => moveToSlide(currentIndex + 1), 5000);
+        const startAutoPlay = () => {
+            clearInterval(autoPlay);
+            autoPlay = setInterval(() => moveToSlide(currentIndex + 1), 5000);
+        };
 
         track.addEventListener('mouseenter', stopAutoPlay);
         track.addEventListener('mouseleave', startAutoPlay);
@@ -1170,6 +1213,27 @@
             });
 
             renderCalendar();
+        }
+
+        // --- Modal Termos de Serviço ---
+        const termsModal = document.getElementById("termsModal");
+        const openTermsBtn = document.getElementById("openTermsModal");
+        const closeTermsBtn = document.querySelector(".close-modal-btn");
+
+        if (openTermsBtn && termsModal && closeTermsBtn) {
+            openTermsBtn.addEventListener('click', () => {
+                termsModal.style.display = "block";
+            });
+
+            closeTermsBtn.addEventListener('click', () => {
+                termsModal.style.display = "none";
+            });
+
+            window.addEventListener('click', (event) => {
+                if (event.target == termsModal) {
+                    termsModal.style.display = "none";
+                }
+            });
         }
     </script>
 </body>
