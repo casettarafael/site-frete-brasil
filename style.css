@@ -81,6 +81,7 @@ nav {
     font-weight: 800;
     color: white;
     letter-spacing: 0.5px;
+    display: flex; /* Garante alinhamento */
 }
 
 .nav-links {
@@ -135,8 +136,7 @@ nav {
     height: 85vh; /* Altura ajustada para mostrar um pouco do conteúdo abaixo */
     min-height: 500px;
     /* Gradiente azulado sobre a imagem para dar tom corporativo */
-    background: linear-gradient(rgba(0,51,102,0.85), rgba(0,51,102,0.7)), url('sua-imagem-aqui.jpg');
-    background-size: cover;
+    background: linear-gradient(rgba(0,51,102,0.85), rgba(0,51,102,0.7)), url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=1920&auto=format&fit=crop');
     background-position: center;
     background-attachment: fixed;
     display: flex;

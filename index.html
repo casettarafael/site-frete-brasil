@@ -11,6 +11,8 @@
     <meta property="og:description" content="Precisa de frete ou mudança no ABC ou Grande SP? Atendemos com agilidade e segurança. Peça um orçamento agora!">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="pt_BR">
+    <meta property="og:image" content="logo.png">
+    <link rel="icon" href="logo.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Fontes Modernas -->
@@ -28,9 +30,7 @@
     <header>
         <nav>
             <a href="#" class="logo" style="text-decoration: none; display: flex; align-items: center;">
-                <!-- Use apenas UM logo. Se tiver imagem, descomente a linha abaixo e remova o texto -->
-                <!-- <img src="logo.png" alt="Frete Brasil 011" height="40"> -->
-                <span style="color: white;">FRETE BRASIL 011</span>
+                <img src="logo.png" alt="Frete Brasil 011" height="70">
             </a>
             <input type="checkbox" id="menu-toggle" class="menu-toggle">
             <label for="menu-toggle" class="menu-icon" aria-label="Abrir menu de navegação"><i class="fas fa-bars"></i></label>
@@ -277,7 +277,7 @@
                 </div>
 
                 <div class="calc-group">
-                    <label for="calc-boxes"><i class="fas fa-box"></i> Quantidade de Caixas (R$ 10/un):</label>
+                    <label for="calc-boxes"><i class="fas fa-box"></i> Quantidade de Caixas (R$ 5/un):</label>
                     <input type="number" id="calc-boxes" min="0" value="0" placeholder="0">
                 </div>
             </div>
@@ -382,7 +382,8 @@
                         <div class="overlay">Equipe Especializada</div>
                     </li>
                     <li class="carousel-slide">
-                        <img src="imagens/embalaerial de Proteção</div>
+                        <img src="imagens/embalagens.webp" alt="Material de Proteção" loading="lazy">
+                        <div class="overlay">Material de Proteção</div>
                     </li>
                 </ul>
             </div>
@@ -834,12 +835,12 @@
             window.addEventListener('resize', updateSlidePosition);
 
             // Auto-play (opcional)
-            let autoPlay = setInterval(() => moveToSlide(currentIndex + 1), 5000);
+            let autoPlay = setInterval(() => moveToSlide(currentIndex + 1), 3000);
             
             const stopAutoPlay = () => clearInterval(autoPlay);
             const startAutoPlay = () => {
                 clearInterval(autoPlay);
-                autoPlay = setInterval(() => moveToSlide(currentIndex + 1), 5000);
+                autoPlay = setInterval(() => moveToSlide(currentIndex + 1), 3000);
             };
 
             track.addEventListener('mouseenter', stopAutoPlay);
@@ -1085,7 +1086,7 @@
         const itemCheckboxes = document.querySelectorAll('.item-checkbox input');
 
         function calculateTotal() {
-            let basePrice = 150; // Taxa mínima de saída
+            let basePrice = 200; // Taxa mínima de saída
             let kmPrice = 10;     // Preço por km
             let boxPrice = 5;   // Preço por caixa
 
