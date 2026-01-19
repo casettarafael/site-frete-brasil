@@ -34,6 +34,24 @@
         </div>
     </section>
 
+    <section class="info" id="servicos">
+        <div class="card fade-on-scroll">
+            <div class="service-icon"><i class="fas fa-truck"></i></div>
+            <h3>Mudanças em Mauá</h3>
+            <p>Atendemos residências e apartamentos em todos os bairros de Mauá.</p>
+        </div>
+        <div class="card fade-on-scroll">
+            <div class="service-icon"><i class="fas fa-box-open"></i></div>
+            <h3>Fretes Rápidos</h3>
+            <p>Transporte de móveis, eletrodomésticos e compras com agilidade.</p>
+        </div>
+        <div class="card fade-on-scroll">
+            <div class="service-icon"><i class="fas fa-route"></i></div>
+            <h3>Mauá e Região</h3>
+            <p>Atendemos também Ribeirão Pires e Rio Grande da Serra.</p>
+        </div>
+    </section>
+
     <section class="location" style="background-color: white; padding: 60px 20px;">
         <div class="coverage-list-container fade-on-scroll">
             <h3>Bairros Atendidos em Mauá</h3>
@@ -63,6 +81,48 @@
         </div>
     </section>
 
+    <section class="why-choose-us">
+        <div class="why-header fade-on-scroll">
+            <h2>Sua melhor opção em Mauá</h2>
+            <p>Compromisso e seriedade no transporte</p>
+        </div>
+        <div class="why-grid">
+            <div class="why-card fade-on-scroll">
+                <div class="why-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>Segurança</h3>
+                <p>Cuidado total com seus pertences do início ao fim da mudança.</p>
+            </div>
+            <div class="why-card fade-on-scroll">
+                <div class="why-icon"><i class="fas fa-clock"></i></div>
+                <h3>Pontualidade</h3>
+                <p>Chegamos no horário combinado para não atrasar seu dia.</p>
+            </div>
+            <div class="why-card fade-on-scroll">
+                <div class="why-icon"><i class="fas fa-thumbs-up"></i></div>
+                <h3>Confiança</h3>
+                <p>Empresa com referências e clientes satisfeitos na região.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" style="background-color: white;">
+        <div class="testimonials-header fade-on-scroll">
+            <h2>O que dizem sobre nós</h2>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card fade-on-scroll">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p>"Fiz minha mudança do Parque São Vicente para o Centro e foi tudo ótimo."</p>
+                <h4>Lucas M. - Mauá</h4>
+            </div>
+            <div class="testimonial-card fade-on-scroll">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p>"Excelente atendimento, muito prestativos e cuidadosos."</p>
+                <h4>Beatriz S. - Mauá</h4>
+            </div>
+        </div>
+    </section>
+
     <section class="contact" id="orcamento">
         <div class="contact-container fade-on-scroll">
             <h2>Orçamento para Mauá</h2>
@@ -79,6 +139,21 @@
     </main>
 
     <footer><div class="footer-bottom"><p>&copy; 2024 Frete Brasil 011.</p></div></footer>
+    <a href="tel:11939353246" class="call-float" aria-label="Ligar Agora">
+        <i class="fas fa-phone"></i>
+    </a>
     <a href="https://wa.me/5511939353246" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+    <script>
+        // Menu Mobile
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => { document.getElementById('menu-toggle').checked = false; });
+        });
+        // Animação Scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        });
+        document.querySelectorAll('.fade-on-scroll').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>

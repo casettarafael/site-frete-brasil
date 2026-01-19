@@ -34,6 +34,24 @@
         </div>
     </section>
 
+    <section class="info" id="servicos">
+        <div class="card fade-on-scroll">
+            <div class="service-icon"><i class="fas fa-truck"></i></div>
+            <h3>Mudanças em SP</h3>
+            <p>Atendemos Zona Sul, Leste, Oeste e Centro com caminhões adequados ao ZMRC.</p>
+        </div>
+        <div class="card fade-on-scroll">
+            <div class="service-icon"><i class="fas fa-box-open"></i></div>
+            <h3>Carretos Express</h3>
+            <p>Transporte rápido de pequenas cargas dentro da capital paulista.</p>
+        </div>
+        <div class="card fade-on-scroll">
+            <div class="service-icon"><i class="fas fa-building"></i></div>
+            <h3>Empresarial</h3>
+            <p>Soluções logísticas para empresas e escritórios em São Paulo.</p>
+        </div>
+    </section>
+
     <section class="location" style="background-color: white; padding: 60px 20px;">
         <div class="coverage-list-container fade-on-scroll">
             <h3>Regiões de Atendimento em SP</h3>
@@ -72,6 +90,48 @@
         </div>
     </section>
 
+    <section class="why-choose-us">
+        <div class="why-header fade-on-scroll">
+            <h2>Por que nos escolher em São Paulo?</h2>
+            <p>Experiência no trânsito e logística da capital</p>
+        </div>
+        <div class="why-grid">
+            <div class="why-card fade-on-scroll">
+                <div class="why-icon"><i class="fas fa-map-marked-alt"></i></div>
+                <h3>Conhecimento de Rotas</h3>
+                <p>Evitamos o trânsito pesado para garantir a pontualidade da sua mudança.</p>
+            </div>
+            <div class="why-card fade-on-scroll">
+                <div class="why-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>Segurança</h3>
+                <p>Equipe de confiança e veículo rastreado para sua tranquilidade.</p>
+            </div>
+            <div class="why-card fade-on-scroll">
+                <div class="why-icon"><i class="fas fa-hand-holding-usd"></i></div>
+                <h3>Custo-Benefício</h3>
+                <p>Preços competitivos para fretes dentro da cidade de São Paulo.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" style="background-color: white;">
+        <div class="testimonials-header fade-on-scroll">
+            <h2>Clientes Satisfeitos</h2>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card fade-on-scroll">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p>"Mudança do Ipiranga para a Vila Mariana foi super tranquila. Recomendo!"</p>
+                <h4>Carlos E. - São Paulo</h4>
+            </div>
+            <div class="testimonial-card fade-on-scroll">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p>"Ótimo atendimento e pontualidade. O motorista conhece bem a cidade."</p>
+                <h4>Fernanda L. - SP</h4>
+            </div>
+        </div>
+    </section>
+
     <section class="contact" id="orcamento">
         <div class="contact-container fade-on-scroll">
             <h2>Orçamento para São Paulo Capital</h2>
@@ -105,5 +165,17 @@
         <div class="footer-bottom"><p>&copy; 2024 Frete Brasil 011.</p></div>
     </footer>
     <a href="https://wa.me/5511939353246" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+    <script>
+        // Menu Mobile
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => { document.getElementById('menu-toggle').checked = false; });
+        });
+        // Animação Scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        });
+        document.querySelectorAll('.fade-on-scroll').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>

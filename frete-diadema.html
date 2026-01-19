@@ -34,6 +34,24 @@
         </div>
     </section>
 
+    <section class="info" id="servicos">
+        <div class="card fade-on-scroll">
+            <div class="service-icon"><i class="fas fa-truck"></i></div>
+            <h3>Mudanças em Diadema</h3>
+            <p>Serviço completo para residências e apartamentos em toda a cidade.</p>
+        </div>
+        <div class="card fade-on-scroll">
+            <div class="service-icon"><i class="fas fa-box-open"></i></div>
+            <h3>Carretos</h3>
+            <p>Transporte de móveis avulsos, eletrodomésticos e pequenas cargas.</p>
+        </div>
+        <div class="card fade-on-scroll">
+            <div class="service-icon"><i class="fas fa-dolly"></i></div>
+            <h3>Cargas Gerais</h3>
+            <p>Transporte seguro para comércios e indústrias da região.</p>
+        </div>
+    </section>
+
     <section class="location" style="background-color: white; padding: 60px 20px;">
         <div class="coverage-list-container fade-on-scroll">
             <h3>Bairros Atendidos em Diadema</h3>
@@ -58,6 +76,48 @@
                         <li>Casa Grande</li>
                     </ul>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-choose-us">
+        <div class="why-header fade-on-scroll">
+            <h2>Qualidade Garantida</h2>
+            <p>Por que contratar a Frete Brasil 011 em Diadema?</p>
+        </div>
+        <div class="why-grid">
+            <div class="why-card fade-on-scroll">
+                <div class="why-icon"><i class="fas fa-check-circle"></i></div>
+                <h3>Experiência</h3>
+                <p>Anos de atuação realizando mudanças em Diadema e região.</p>
+            </div>
+            <div class="why-card fade-on-scroll">
+                <div class="why-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>Segurança</h3>
+                <p>Seus bens são transportados com total cuidado e proteção.</p>
+            </div>
+            <div class="why-card fade-on-scroll">
+                <div class="why-icon"><i class="fas fa-wallet"></i></div>
+                <h3>Preço Acessível</h3>
+                <p>Valores justos que cabem no seu bolso.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" style="background-color: white;">
+        <div class="testimonials-header fade-on-scroll">
+            <h2>Opinião dos Clientes</h2>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card fade-on-scroll">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p>"Contratei para uma mudança no Serraria e foram muito rápidos. Recomendo!"</p>
+                <h4>Paulo R. - Diadema</h4>
+            </div>
+            <div class="testimonial-card fade-on-scroll">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p>"Preço bom e serviço de qualidade. O motorista foi muito atencioso."</p>
+                <h4>Mariana C. - Diadema</h4>
             </div>
         </div>
     </section>
@@ -95,5 +155,17 @@
         <div class="footer-bottom"><p>&copy; 2024 Frete Brasil 011.</p></div>
     </footer>
     <a href="https://wa.me/5511939353246" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+    <script>
+        // Menu Mobile
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => { document.getElementById('menu-toggle').checked = false; });
+        });
+        // Animação Scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        });
+        document.querySelectorAll('.fade-on-scroll').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>
