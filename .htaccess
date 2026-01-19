@@ -1,0 +1,11 @@
+RewriteEngine On
+
+# 1. Forçar a remoção do WWW (Redireciona www.fretebrasil011.com.br para fretebrasil011.com.br)
+# Isso garante consistência com suas tags canônicas e sitemap.
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+# 2. Forçar HTTPS (Redireciona http:// para https://)
+# Garante segurança e é um fator de ranqueamento no Google.
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
