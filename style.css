@@ -2601,7 +2601,7 @@ body.has-topbar .thank-you-container { margin-top: 85px; }
 }
 
 /* Breadcrumbs dentro do Page Header (Fundo Escuro) */
-.page-header .breadcrumbs {
+.page-header .breadcrumbs, .hero .breadcrumbs {
     color: rgba(255,255,255,0.9);
     background: rgba(0,0,0,0.3);
     display: inline-block;
@@ -2611,11 +2611,11 @@ body.has-topbar .thank-you-container { margin-top: 85px; }
     backdrop-filter: blur(5px);
 }
 
-.page-header .breadcrumbs .current {
+.page-header .breadcrumbs .current, .hero .breadcrumbs .current {
     color: white;
 }
 
-.page-header .breadcrumbs a:hover {
+.page-header .breadcrumbs a:hover, .hero .breadcrumbs a:hover {
     color: var(--accent-color);
 }
 
